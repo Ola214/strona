@@ -1,0 +1,515 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+	 v2.0 | 20110126
+	 License: none (public domain)
+	 Changed from CSS to SASS
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@-webkit-keyframes bg-intro-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes bg-intro-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100%;
+  }
+}
+
+@-webkit-keyframes bg-intro-animation-logo {
+  from {
+    background-position: 0 calc(120px - 25vh);
+  }
+  to {
+    background-position: 0 calc(100% - calc(120px - 75vh));
+  }
+}
+
+@keyframes bg-intro-animation-logo {
+  from {
+    background-position: 0 calc(120px - 25vh);
+  }
+  to {
+    background-position: 0 calc(100% - calc(120px - 75vh));
+  }
+}
+
+@-webkit-keyframes bg-top-up {
+  99% {
+    height: 9vh;
+  }
+  100% {
+    height: 9vh;
+    display: none;
+  }
+}
+
+@keyframes bg-top-up {
+  99% {
+    height: 9vh;
+  }
+  100% {
+    height: 9vh;
+    display: none;
+  }
+}
+
+@-webkit-keyframes show-menu-hidden-left {
+  0% {
+    margin-right: 45vw;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
+@keyframes show-menu-hidden-left {
+  0% {
+    margin-right: 45vw;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
+@-webkit-keyframes show-menu-hidden-right {
+  0% {
+    margin-left: 55vw;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes show-menu-hidden-right {
+  0% {
+    margin-left: 55vw;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@-webkit-keyframes hide-menu-hidden-left {
+  0% {
+    margin-right: 0;
+  }
+  100% {
+    margin-right: 45vw;
+    width: 0vw;
+  }
+}
+
+@keyframes hide-menu-hidden-left {
+  0% {
+    margin-right: 0;
+  }
+  100% {
+    margin-right: 45vw;
+    width: 0vw;
+  }
+}
+
+@-webkit-keyframes hide-menu-hidden-right {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 55vw;
+    width: 0vw;
+  }
+}
+
+@keyframes hide-menu-hidden-right {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 55vw;
+    width: 0vw;
+  }
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.show-menu-hidden-right {
+  -webkit-animation-name: show-menu-hidden-right;
+          animation-name: show-menu-hidden-right;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  width: 55vw;
+  height: 100vh;
+  margin-left: 55vw;
+  background-color: #ECECEC;
+}
+
+.show-menu-hidden-left {
+  -webkit-animation-name: show-menu-hidden-left;
+          animation-name: show-menu-hidden-left;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  width: 45vw;
+  height: 100vh;
+  margin-right: 45vw;
+  background-color: #ECECEC;
+}
+
+.moving {
+  -webkit-animation-name: bg-top-up;
+          animation-name: bg-top-up;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.menu-hidden {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 200;
+  top: 0;
+  right: 0;
+}
+
+.menu-hidden-right {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Roboto';
+  color: #f2999d;
+}
+
+.menu-hidden-right-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#menu-hidden-button-2 {
+  margin-right: 3vw;
+  margin-top: 1.5vh;
+  cursor: pointer;
+}
+
+.menu-hidden-right ul {
+  height: 90vh;
+  font-size: 9vh;
+  font-weight: bold;
+  padding-left: 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-hidden-right ul li {
+  padding-top: 1.9vh;
+  padding-bottom: 1.9vh;
+}
+
+.menu-hidden-right ul li a {
+  white-space: nowrap;
+}
+
+.menu-hidden-right ul li a:hover {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1vh solid #f2999d;
+  cursor: pointer;
+}
+
+.menu-footer {
+  font-size: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 30vw;
+}
+
+.menu-footer div {
+  white-space: nowrap;
+  margin-right: 4vw;
+}
+
+.hide-menu-hidden-left {
+  -webkit-animation-name: hide-menu-hidden-left;
+          animation-name: hide-menu-hidden-left;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.hide-menu-hidden-right {
+  -webkit-animation-name: hide-menu-hidden-right;
+          animation-name: hide-menu-hidden-right;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.logo {
+  width: 100vw;
+  font-family: "Roboto";
+  font-size: 20vh;
+  font-weight: 900;
+  text-align: center;
+  color: rgba(161, 103, 128, 0.5);
+  -webkit-text-stroke: 0.5px #000000;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: url("../images/pattern-3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 calc(100% - calc(12vh - 75vh));
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  -webkit-animation: bg-intro-animation-logo 20s linear;
+          animation: bg-intro-animation-logo 20s linear;
+  white-space: nowrap;
+}
+
+.main-container {
+  background-image: url("../images/pattern-3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 100%;
+  -webkit-animation: bg-intro-animation 20s linear;
+          animation: bg-intro-animation 20s linear;
+}
+
+.menu {
+  position: absolute;
+  width: 100vw;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: 'Roboto';
+}
+
+.menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 9vh;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+.menu-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 9vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 45vh;
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
+.menu li:hover {
+  margin-top: 0.5vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 0.5vh solid black;
+  cursor: pointer;
+}
+
+.menu li:last-child:hover {
+  border: none;
+  cursor: pointer;
+}
+
+.menu li:last-child {
+  margin-right: 3vw;
+  margin-left: 3vw;
+}
+
+.menu li {
+  margin-right: 1vw;
+  margin-left: 1vw;
+  font-size: 1.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 9vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bg-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 100;
+  background-image: -webkit-gradient(linear, left top, right top, from(#f2999d), to(#f8d3de));
+  background-image: linear-gradient(to right, #f2999d, #f8d3de);
+  height: calc(50vh - 0.2vh);
+  width: 100%;
+  border-bottom: 0.2vh solid #db7f84;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.btn-intro-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50vh;
+}
+
+#btn-intro:hover {
+  border: 0.4vh solid #000000;
+  cursor: pointer;
+}
+
+#btn-intro {
+  background: none;
+  font-size: 3.5vh;
+  border-radius: 10px;
+  width: 20vh;
+  height: 10vh;
+  font-family: 'Roboto';
+  border: 0.2vh solid #000000;
+  -webkit-text-stroke: 0.5px #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: -webkit-box-shadow 0.25s ease-in-out;
+  transition: -webkit-box-shadow 0.25s ease-in-out;
+  transition: box-shadow 0.25s ease-in-out;
+  transition: box-shadow 0.25s ease-in-out, -webkit-box-shadow 0.25s ease-in-out;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(56, 38, 38, 0.5);
+          box-shadow: 0 0.5rem 1rem rgba(56, 38, 38, 0.5);
+}
+
+#btn-intro.active {
+  -webkit-box-shadow: inset -10.2vh 0 0 0 #f2999d, inset 10.2vh 0 0 0 #f2999d;
+          box-shadow: inset -10.2vh 0 0 0 #f2999d, inset 10.2vh 0 0 0 #f2999d;
+  border: 0.2vh solid #000000;
+  color: #ffffff;
+  font-weight: bold;
+}
+/*# sourceMappingURL=global.css.map */

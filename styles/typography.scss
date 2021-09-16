@@ -1,0 +1,16 @@
+$intro-font-family:'Roboto';
+$intro-font-family-2:'Berkshire Swash', cursive;
+$intro-font-family-3:'News Cycle', sans-serif;
+
+@mixin intro-font {
+    font-family: $intro-font-family;
+    font-size: 20vh;
+    font-weight: 900;
+}
+
+@mixin intro-text-style {
+    @include intro-font;
+    text-align: center;
+    color: rgba(161,103,128,0.5);
+    -webkit-text-stroke: 0.5px #000000;
+}
