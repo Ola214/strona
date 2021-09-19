@@ -189,6 +189,18 @@ table {
   background-color: #ECECEC;
 }
 
+@media only screen and (max-width: 320px) {
+  .show-menu-hidden-right {
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .show-menu-hidden-right {
+    width: 55vw;
+  }
+}
+
 .show-menu-hidden-left {
   -webkit-animation-name: show-menu-hidden-left;
           animation-name: show-menu-hidden-left;
@@ -200,6 +212,12 @@ table {
   height: 100vh;
   margin-right: 45vw;
   background-color: #ECECEC;
+}
+
+@media only screen and (max-width: 320px) {
+  .show-menu-hidden-left {
+    display: none !important;
+  }
 }
 
 .moving {
@@ -258,7 +276,6 @@ table {
 
 .menu-hidden-right ul {
   height: 90vh;
-  font-size: 9vh;
   font-weight: bold;
   padding-left: 5vw;
   display: -webkit-box;
@@ -271,6 +288,18 @@ table {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (max-width: 320px) {
+  .menu-hidden-right ul {
+    font-size: 10vw;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .menu-hidden-right ul {
+    font-size: 9vh;
+  }
 }
 
 .menu-hidden-right ul li {
@@ -301,7 +330,18 @@ table {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding-left: 30vw;
+}
+
+@media only screen and (max-width: 320px) {
+  .menu-footer {
+    padding-left: 10vw;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .menu-footer {
+    padding-left: 30vw;
+  }
 }
 
 .menu-footer div {
@@ -329,17 +369,11 @@ table {
 
 .logo {
   width: 100vw;
-  font-family: "Roboto";
-  font-size: 20vh;
-  font-weight: 900;
   text-align: center;
-  color: rgba(161, 103, 128, 0.5);
-  -webkit-text-stroke: 0.5px #000000;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  font-weight: 900;
+  font-family: "Roboto";
   background-image: url("../images/pattern-3.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
   background-position: 0 calc(100% - calc(12vh - 75vh));
   padding-bottom: 2vh;
   padding-top: 2vh;
@@ -348,13 +382,54 @@ table {
   white-space: nowrap;
 }
 
+@media only screen and (max-width: 320px) {
+  .logo {
+    font-size: 9vw;
+    text-transform: uppercase;
+    background-image: none;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .logo {
+    font-size: 20vh;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.5px #000000;
+    color: rgba(161, 103, 128, 0.5);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .logo {
+    background-size: 200%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .logo {
+    background-size: 100%;
+  }
+}
+
 .main-container {
   background-image: url("../images/pattern-3.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
   background-position: 0 100%;
   -webkit-animation: bg-intro-animation 20s linear;
           animation: bg-intro-animation 20s linear;
+}
+
+@media only screen and (max-width: 320px) {
+  .main-container {
+    background-size: 200%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .main-container {
+    background-size: 100%;
+  }
 }
 
 .menu {
@@ -371,7 +446,6 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
   height: 9vh;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -391,6 +465,12 @@ table {
           padding-inline-start: 0;
 }
 
+@media only screen and (min-width: 769px) {
+  .menu ul {
+    width: 100%;
+  }
+}
+
 .menu-logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -403,7 +483,7 @@ table {
       -ms-flex-pack: center;
           justify-content: center;
   width: 45vh;
-  font-size: 2.5vh;
+  font-size: 3vh;
   font-weight: bold;
 }
 
@@ -439,6 +519,12 @@ table {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (max-width: 320px) {
+  .menu li:not(:last-child) {
+    display: none;
+  }
 }
 
 .bg-top {
@@ -481,10 +567,7 @@ table {
 
 #btn-intro {
   background: none;
-  font-size: 3.5vh;
   border-radius: 10px;
-  width: 20vh;
-  height: 10vh;
   font-family: 'Roboto';
   border: 0.2vh solid #000000;
   -webkit-text-stroke: 0.5px #000000;
@@ -505,9 +588,25 @@ table {
           box-shadow: 0 0.5rem 1rem rgba(56, 38, 38, 0.5);
 }
 
+@media only screen and (max-width: 320px) {
+  #btn-intro {
+    font-size: 7vw;
+    width: 50vw;
+    height: 15vw;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #btn-intro {
+    font-size: 3.5vh;
+    width: 20vh;
+    height: 10vh;
+  }
+}
+
 #btn-intro.active {
-  -webkit-box-shadow: inset -10.2vh 0 0 0 #f2999d, inset 10.2vh 0 0 0 #f2999d;
-          box-shadow: inset -10.2vh 0 0 0 #f2999d, inset 10.2vh 0 0 0 #f2999d;
+  -webkit-box-shadow: inset -20vh 0 0 0 #f2999d, inset 20vh 0 0 0 #f2999d;
+          box-shadow: inset -20vh 0 0 0 #f2999d, inset 20vh 0 0 0 #f2999d;
   border: 0.2vh solid #000000;
   color: #ffffff;
   font-weight: bold;

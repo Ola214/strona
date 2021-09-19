@@ -11,6 +11,7 @@
   height: 100vh;
   margin-left: 55vw;
   background-color: #ECECEC;
+  @include hidden-menu-right-style;
 }
 
 .show-menu-hidden-left {
@@ -21,6 +22,7 @@
   height: 100vh;
   margin-right: 45vw;
   background-color: #ECECEC;
+  @include hidden-menu-left-style;
 }
 
 .moving {
@@ -59,7 +61,7 @@
 
 .menu-hidden-right ul{
   height: 90vh;
-  font-size: 9vh;
+  @include hidden-menu-right-ul-style;
   font-weight: bold;
   padding-left: 5vw;
   display: flex;
@@ -87,7 +89,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-left: 30vw;
+  @include menu-footer-style;
 }
 .menu-footer div {
   white-space: nowrap;
@@ -109,11 +111,9 @@
 .logo {
   width: 100vw;
   @include intro-text-style;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
   background-image: url('../images/pattern-3.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  @include background-size;
   background-position: 0 calc(100% - calc(12vh - 75vh));
   //background-attachment: fixed;
   padding-bottom: 2vh;
@@ -125,11 +125,8 @@
 .main-container {
     background-image: url('../images/pattern-3.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    @include background-size;
     background-position: 0 100%;
-    //background-attachment: fixed;
-    //padding-bottom: 20px;
-    //padding-top: 20px;
     animation: bg-intro-animation 20s linear;
 }
 
@@ -142,7 +139,7 @@
 
 .menu ul {
   display: flex;
-  width: 100vw;
+  @include ul-menu-width-style;
   height: 9vh;
   justify-content: flex-end;
   align-items: center;
@@ -158,7 +155,7 @@
   align-items: center;
   justify-content: center;
   width: 45vh;
-  font-size: 2.5vh;
+  font-size: 3vh;
   font-weight: bold;
 }
 
@@ -189,6 +186,10 @@
   justify-content: center;
 }
 
+.menu li:not(:last-child) {
+  @include li-menu-style;
+}
+
 .bg-top {
     display: flex;
     justify-content: center;
@@ -216,10 +217,8 @@
 
 #btn-intro {
   background: none;
-  font-size: 3.5vh;
+  @include btn-intro-size;
   border-radius: 10px;
-  width: 20vh;
-  height: 10vh;
   font-family: 'Roboto';
   border: 0.2vh solid #000000;
   -webkit-text-stroke: 0.5px #000000;
@@ -232,8 +231,8 @@
 
 #btn-intro.active {
   box-shadow: //nie dziala
-    inset -10.2vh 0 0 0 #f2999d,
-    inset 10.2vh 0 0 0 #f2999d;
+    inset -20vh 0 0 0 #f2999d,
+    inset 20vh 0 0 0 #f2999d;
   border: 0.2vh solid #000000;
   color: #ffffff;
   font-weight: bold;

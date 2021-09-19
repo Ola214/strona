@@ -1,16 +1,86 @@
 $intro-font-family:'Roboto';
-$intro-font-family-2:'Berkshire Swash', cursive;
-$intro-font-family-3:'News Cycle', sans-serif;
-
-@mixin intro-font {
-    font-family: $intro-font-family;
-    font-size: 20vh;
-    font-weight: 900;
-}
 
 @mixin intro-text-style {
-    @include intro-font;
     text-align: center;
-    color: rgba(161,103,128,0.5);
-    -webkit-text-stroke: 0.5px #000000;
+    font-weight: 900;
+    font-family: $intro-font-family;
+    @media #{unquote($phone)} {
+        font-size: 9vw;
+        text-transform: uppercase;
+        background-image: none;
+    }
+    @media #{unquote($desktop)} {
+        font-size: 20vh;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 0.5px #000000;
+        color: rgba(161,103,128,0.5);
+    }
+}
+
+@mixin background-size {
+    @media #{unquote($phone)} {
+        background-size: 200%;
+    }
+    @media #{unquote($desktop)} {
+        background-size: 100%;
+    }
+}
+
+@mixin btn-intro-size {
+    @media #{unquote($phone)} {
+        font-size: 7vw;
+        width: 50vw;
+        height: 15vw;
+    }
+    @media #{unquote($desktop)} {
+        font-size: 3.5vh;
+        width: 20vh;
+        height: 10vh;
+    }
+}
+
+@mixin li-menu-style {
+    @media #{unquote($phone)} {
+        display: none;
+    }
+}
+
+@mixin ul-menu-width-style {
+    @media #{unquote($desktop)} {
+        width: 100%;
+    }
+}
+
+@mixin hidden-menu-left-style {
+    @media #{unquote($phone)} {
+        display: none !important;
+    }
+}
+
+@mixin hidden-menu-right-style {
+    @media #{unquote($phone)} {
+        width: 100vw;
+    }
+    @media #{unquote($desktop)} {
+        width: 55vw;
+    }
+}
+
+@mixin hidden-menu-right-ul-style {
+    @media #{unquote($phone)} {
+        font-size: 10vw;
+    }
+    @media #{unquote($desktop)} {
+        font-size: 9vh;
+    }
+}
+
+@mixin menu-footer-style {
+    @media #{unquote($phone)} {
+        padding-left: 10vw;
+    }
+    @media #{unquote($desktop)} {
+        padding-left: 30vw;
+    }
 }
