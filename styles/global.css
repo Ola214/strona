@@ -75,22 +75,42 @@ table {
   }
 }
 
-@-webkit-keyframes bg-top-up {
+@-webkit-keyframes bg-top-up-desktop {
   99% {
-    height: 9vh;
+    height: 12vh;
   }
   100% {
-    height: 9vh;
+    height: 12vh;
     display: none;
   }
 }
 
-@keyframes bg-top-up {
+@keyframes bg-top-up-desktop {
   99% {
-    height: 9vh;
+    height: 12vh;
   }
   100% {
-    height: 9vh;
+    height: 12vh;
+    display: none;
+  }
+}
+
+@-webkit-keyframes bg-top-up-phone {
+  99% {
+    height: 25vh;
+  }
+  100% {
+    height: 25vh;
+    display: none;
+  }
+}
+
+@keyframes bg-top-up-phone {
+  99% {
+    height: 25vh;
+  }
+  100% {
+    height: 25vh;
     display: none;
   }
 }
@@ -189,13 +209,13 @@ table {
   background-color: #ECECEC;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   .show-menu-hidden-right {
     width: 100vw;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .show-menu-hidden-right {
     width: 55vw;
   }
@@ -214,19 +234,31 @@ table {
   background-color: #ECECEC;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   .show-menu-hidden-left {
     display: none !important;
   }
 }
 
 .moving {
-  -webkit-animation-name: bg-top-up;
-          animation-name: bg-top-up;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
+}
+
+@media only screen and (max-width: 767px) {
+  .moving {
+    -webkit-animation-name: bg-top-up-phone;
+            animation-name: bg-top-up-phone;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .moving {
+    -webkit-animation-name: bg-top-up-desktop;
+            animation-name: bg-top-up-desktop;
+  }
 }
 
 .menu-hidden {
@@ -269,8 +301,8 @@ table {
 }
 
 #menu-hidden-button-2 {
-  margin-right: 3vw;
-  margin-top: 1.5vh;
+  margin-right: 3vh;
+  margin-top: 3vh;
   cursor: pointer;
 }
 
@@ -290,13 +322,13 @@ table {
           justify-content: center;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   .menu-hidden-right ul {
     font-size: 10vw;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .menu-hidden-right ul {
     font-size: 9vh;
   }
@@ -332,13 +364,13 @@ table {
           justify-content: flex-start;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   .menu-footer {
     padding-left: 10vw;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .menu-footer {
     padding-left: 30vw;
   }
@@ -370,19 +402,16 @@ table {
 .logo {
   width: 100vw;
   text-align: center;
-  font-weight: 900;
   font-family: "Roboto";
   background-image: url("../images/pattern-3.jpg");
   background-repeat: no-repeat;
   background-position: 0 calc(100% - calc(12vh - 75vh));
   padding-bottom: 2vh;
   padding-top: 2vh;
-  -webkit-animation: bg-intro-animation-logo 20s linear;
-          animation: bg-intro-animation-logo 20s linear;
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   .logo {
     font-size: 9vw;
     text-transform: uppercase;
@@ -390,25 +419,39 @@ table {
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .logo {
+    font-weight: 900;
     font-size: 20vh;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 0.5px #000000;
     color: rgba(161, 103, 128, 0.5);
+    -webkit-animation: bg-intro-animation-logo 20s linear;
+            animation: bg-intro-animation-logo 20s linear;
   }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   .logo {
     background-size: 200%;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .logo {
     background-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .logo {
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: 44vh;
+    height: 50vh;
+    background-position: center;
+    color: transparent;
   }
 }
 
@@ -420,13 +463,13 @@ table {
           animation: bg-intro-animation 20s linear;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   .main-container {
     background-size: 200%;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .main-container {
     background-size: 100%;
   }
@@ -440,6 +483,14 @@ table {
       -ms-flex-direction: row;
           flex-direction: row;
   font-family: 'Roboto';
+}
+
+@media only screen and (max-width: 767px) {
+  .menu {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .menu ul {
@@ -465,7 +516,7 @@ table {
           padding-inline-start: 0;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .menu ul {
     width: 100%;
   }
@@ -484,7 +535,22 @@ table {
           justify-content: center;
   width: 45vh;
   font-size: 3vh;
-  font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  .menu-logo {
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-logo {
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: 25vh;
+    height: 25vh;
+    color: transparent;
+  }
 }
 
 .menu li:hover {
@@ -495,20 +561,32 @@ table {
   cursor: pointer;
 }
 
-.menu li:last-child:hover {
+.menu lord-icon:hover {
   border: none;
   cursor: pointer;
 }
 
-.menu li:last-child {
-  margin-right: 3vw;
-  margin-left: 3vw;
+.menu lord-icon {
+  margin-right: 3vh;
+  margin-left: 3vh;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu lord-icon {
+    margin-top: 3vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .menu lord-icon {
+    margin-top: 1.5vh;
+  }
 }
 
 .menu li {
   margin-right: 1vw;
   margin-left: 1vw;
-  font-size: 1.5vh;
+  font-size: 2vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -521,8 +599,8 @@ table {
           justify-content: center;
 }
 
-@media only screen and (max-width: 320px) {
-  .menu li:not(:last-child) {
+@media only screen and (max-width: 767px) {
+  .menu li {
     display: none;
   }
 }
@@ -588,15 +666,15 @@ table {
           box-shadow: 0 0.5rem 1rem rgba(56, 38, 38, 0.5);
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   #btn-intro {
-    font-size: 7vw;
-    width: 50vw;
+    font-size: 6.5vw;
+    width: 40vw;
     height: 15vw;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   #btn-intro {
     font-size: 3.5vh;
     width: 20vh;

@@ -26,7 +26,12 @@
 }
 
 .moving {
-  animation-name: bg-top-up;
+  @media #{unquote($phone)} {
+    animation-name: bg-top-up-phone;
+  }
+  @media #{unquote($desktop)} {
+    animation-name: bg-top-up-desktop;
+  }
   animation-fill-mode: forwards;
   animation-duration: 2s;
 }
@@ -54,8 +59,8 @@
 }
 
 #menu-hidden-button-2 {
-  margin-right: 3vw;
-  margin-top: 1.5vh;
+  margin-right: 3vh;
+  margin-top: 3vh;
   cursor: pointer;
 }
 
@@ -115,11 +120,10 @@
   background-repeat: no-repeat;
   @include background-size;
   background-position: 0 calc(100% - calc(12vh - 75vh));
-  //background-attachment: fixed;
   padding-bottom: 2vh;
   padding-top: 2vh;
-  animation: bg-intro-animation-logo 20s linear;
   white-space: nowrap;
+  @include logo-style;
 }
 
 .main-container {
@@ -135,6 +139,7 @@
   width: 100vw;
   flex-direction: row;
   font-family: 'Roboto';
+  @include menu-style;
 }
 
 .menu ul {
@@ -156,7 +161,7 @@
   justify-content: center;
   width: 45vh;
   font-size: 3vh;
-  font-weight: bold;
+  @include menu-logo-style;
 }
 
 .menu li:hover {
@@ -166,27 +171,25 @@
   cursor: pointer;
 }
 
-.menu li:last-child:hover {
+.menu lord-icon:hover {
   border: none;
   cursor: pointer;
 }
 
-.menu li:last-child {
-  margin-right: 3vw;
-  margin-left: 3vw;
+.menu lord-icon {
+  margin-right: 3vh;
+  margin-left: 3vh;
+  @include menu-lord-icon-style;
 }
 
 .menu li {
   margin-right: 1vw;
   margin-left: 1vw;
-  font-size: 1.5vh;
+  font-size: 2vh;
   display: flex;
   height: 9vh;
   align-items: center;
   justify-content: center;
-}
-
-.menu li:not(:last-child) {
   @include li-menu-style;
 }
 

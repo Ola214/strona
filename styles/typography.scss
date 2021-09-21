@@ -2,7 +2,6 @@ $intro-font-family:'Roboto';
 
 @mixin intro-text-style {
     text-align: center;
-    font-weight: 900;
     font-family: $intro-font-family;
     @media #{unquote($phone)} {
         font-size: 9vw;
@@ -10,13 +9,40 @@ $intro-font-family:'Roboto';
         background-image: none;
     }
     @media #{unquote($desktop)} {
+        font-weight: 900;
         font-size: 20vh;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         -webkit-text-stroke: 0.5px #000000;
         color: rgba(161,103,128,0.5);
+        animation: bg-intro-animation-logo 20s linear;
     }
 }
+
+@mixin logo-style {
+    @media #{unquote($phone)} {
+        background-image: url("../images/logo.png");
+        background-repeat: no-repeat;
+        background-size: 44vh;
+        height: 50vh;
+        background-position: center;
+        color: transparent;
+    }
+}
+
+@mixin menu-logo-style {
+    @media #{unquote($desktop)} {
+        font-weight: bold;
+    }
+    @media #{unquote($phone)} {
+        background-image: url("../images/logo.png");
+        background-repeat: no-repeat;
+        background-size: 25vh;
+        height: 25vh;
+        color: transparent;
+    }
+}
+
 
 @mixin background-size {
     @media #{unquote($phone)} {
@@ -29,8 +55,8 @@ $intro-font-family:'Roboto';
 
 @mixin btn-intro-size {
     @media #{unquote($phone)} {
-        font-size: 7vw;
-        width: 50vw;
+        font-size: 6.5vw;
+        width: 40vw;
         height: 15vw;
     }
     @media #{unquote($desktop)} {
@@ -82,5 +108,20 @@ $intro-font-family:'Roboto';
     }
     @media #{unquote($desktop)} {
         padding-left: 30vw;
+    }
+}
+
+@mixin menu-style {
+    @media #{unquote($phone)} {
+        justify-content: space-between;
+    }
+}
+
+@mixin menu-lord-icon-style {
+    @media #{unquote($phone)} {
+        margin-top: 3vh;
+    }
+    @media #{unquote($desktop)} {
+        margin-top: 1.5vh;
     }
 }
