@@ -191,6 +191,11 @@ table {
   }
 }
 
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
 .main-container {
   width: 100vw;
   height: 100vh;
@@ -278,6 +283,33 @@ table {
   right: 0;
 }
 
+@media only screen and (max-width: 767px) {
+  .menu-hidden {
+    margin-top: 25vh;
+  }
+  .menu-hidden #menu-hidden-button-2 {
+    display: none;
+  }
+  .menu-hidden .menu-hidden-right {
+    height: 75vh;
+  }
+  .menu-hidden .menu-hidden-right ul {
+    height: 65vh;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    font-size: 2.5vh;
+    padding-left: 0;
+  }
+  .menu-hidden .menu-hidden-right ul li {
+    border-bottom: 1px solid #dddddd;
+    width: 100vw;
+  }
+  .menu-hidden .menu-hidden-right ul li a {
+    padding-left: 5vw;
+  }
+}
+
 .menu-hidden-right {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -334,20 +366,50 @@ table {
   }
 }
 
-.menu-hidden-right ul li {
-  padding-top: 1.9vh;
-  padding-bottom: 1.9vh;
+@media only screen and (min-width: 768px) {
+  .menu-hidden-right ul li {
+    padding-top: 1.9vh;
+    padding-bottom: 1.9vh;
+  }
 }
 
 .menu-hidden-right ul li a {
   white-space: nowrap;
 }
 
+@media only screen and (max-width: 767px) {
+  .menu-hidden-right ul li a {
+    padding-top: 1.9vh;
+    padding-bottom: 1.9vh;
+    width: 95vw;
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-hidden-right ul li a:first-child {
+    padding-top: 3vh;
+  }
+}
+
 .menu-hidden-right ul li a:hover {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-bottom: 1vh solid #f2999d;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .menu-hidden-right ul li a:hover {
+    border-bottom: 1vh solid #f2999d;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-hidden-right ul li a:hover {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .menu-footer {
@@ -367,6 +429,7 @@ table {
 @media only screen and (max-width: 767px) {
   .menu-footer {
     padding-left: 10vw;
+    height: 10vh;
   }
 }
 
@@ -497,7 +560,7 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 9vh;
+  height: 12vh;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -526,7 +589,7 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 9vh;
+  height: 12vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -579,7 +642,7 @@ table {
 
 @media only screen and (min-width: 768px) {
   .menu lord-icon {
-    margin-top: 1.5vh;
+    margin-top: 3vh;
   }
 }
 
@@ -590,7 +653,7 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 9vh;
+  height: 12vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -662,15 +725,15 @@ table {
   transition: -webkit-box-shadow 0.25s ease-in-out;
   transition: box-shadow 0.25s ease-in-out;
   transition: box-shadow 0.25s ease-in-out, -webkit-box-shadow 0.25s ease-in-out;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(56, 38, 38, 0.5);
-          box-shadow: 0 0.5rem 1rem rgba(56, 38, 38, 0.5);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(56, 38, 38, 0.3);
+          box-shadow: 0 0.5rem 1rem rgba(56, 38, 38, 0.3);
 }
 
 @media only screen and (max-width: 767px) {
   #btn-intro {
-    font-size: 6.5vw;
-    width: 40vw;
-    height: 15vw;
+    font-size: 6vw;
+    width: 35vw;
+    height: 12vw;
   }
 }
 

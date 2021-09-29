@@ -55,9 +55,9 @@ $intro-font-family:'Roboto';
 
 @mixin btn-intro-size {
     @media #{unquote($phone)} {
-        font-size: 6.5vw;
-        width: 40vw;
-        height: 15vw;
+        font-size: 6vw;
+        width: 35vw;
+        height: 12vw;
     }
     @media #{unquote($desktop)} {
         font-size: 3.5vh;
@@ -105,6 +105,7 @@ $intro-font-family:'Roboto';
 @mixin menu-footer-style {
     @media #{unquote($phone)} {
         padding-left: 10vw;
+        height: 10vh;
     }
     @media #{unquote($desktop)} {
         padding-left: 30vw;
@@ -122,6 +123,31 @@ $intro-font-family:'Roboto';
         margin-top: 3vh;
     }
     @media #{unquote($desktop)} {
-        margin-top: 1.5vh;
+        margin-top: 3vh;
+    }
+}
+
+@mixin menu-hidden-style {
+    @media #{unquote($phone)} {
+        margin-top: 25vh;
+        #menu-hidden-button-2 {
+            display: none;
+        }
+        .menu-hidden-right {
+            height: 75vh;
+        }
+        .menu-hidden-right ul {
+            height: 65vh;
+            justify-content: flex-start;
+            font-size: 2.5vh;
+            padding-left: 0;
+        }
+        .menu-hidden-right ul li {
+            border-bottom: 1px solid #dddddd;
+            width: 100vw;
+        }
+        .menu-hidden-right ul li a {
+            padding-left: 5vw;
+        }
     }
 }

@@ -27,22 +27,29 @@ const menu_hidden_button = document.querySelector('#menu-hidden-button');
 menu_hidden_button.addEventListener('click', showHiddenMenu);
 
 function showHiddenMenu() {
+
     const bg_top = document.querySelector('.bg-top');
 
     const menu_hidden_right = document.querySelector(".menu-hidden-right");
-    menu_hidden_right.classList.add("show-menu-hidden-right");
-    menu_hidden_right.classList.remove("hide-menu-hidden-right");
-    menu_hidden_right.setAttribute('style', 'display: flex;');
 
-    const menu_hidden_left = document.querySelector(".menu-hidden-left");
-    menu_hidden_left.classList.add("show-menu-hidden-left");
-    menu_hidden_left.classList.remove("hide-menu-hidden-left");
-    menu_hidden_left.setAttribute('style', 'display: flex;');
+    if(document.querySelector(".show-menu-hidden-right") == null) {
+        menu_hidden_right.classList.add("show-menu-hidden-right");
+        menu_hidden_right.classList.remove("hide-menu-hidden-right");
+        menu_hidden_right.setAttribute('style', 'display: flex;');
 
-    setTimeout(function() {
-        const menu_hidden_img = document.querySelector("#menu-hidden-img");
-        menu_hidden_img.setAttribute('style', 'display: block;');
-    }, 1000);
+        const menu_hidden_left = document.querySelector(".menu-hidden-left");
+        menu_hidden_left.classList.add("show-menu-hidden-left");
+        menu_hidden_left.classList.remove("hide-menu-hidden-left");
+        menu_hidden_left.setAttribute('style', 'display: flex;');
+
+        setTimeout(function() {
+            const menu_hidden_img = document.querySelector("#menu-hidden-img");
+            menu_hidden_img.setAttribute('style', 'display: block;');
+        }, 1000);
+    } else {
+        hideHiddenMenu();
+    }
+    
 }
 
 const menu_hidden_button_2 = document.querySelector('#menu-hidden-button-2');
