@@ -1,7 +1,9 @@
 $phone: "only screen and (max-width: 767px)";
 $tablet: "only screen and (max-width: 991px)";
 //$desktop: "only screen and (min-width: 992px)";
-$desktop: "only screen and (min-width: 768px)";
+$desktop: "only screen and (min-width: 767.01px)";
+$logo-full: "only screen and (min-width: 1255px)";
+$logo-small: "only screen and (max-width: 1254.99px)";
 
 @mixin border-radius-single($radius) {
 	border-radius: $radius;

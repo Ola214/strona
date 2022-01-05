@@ -3,12 +3,12 @@ $intro-font-family:'Roboto';
 @mixin intro-text-style {
     text-align: center;
     font-family: $intro-font-family;
-    @media #{unquote($phone)} {
+    @media #{unquote($logo-small)} {
         font-size: 9vw;
         text-transform: uppercase;
         background-image: none;
     }
-    @media #{unquote($desktop)} {
+    @media #{unquote($logo-full)} {
         font-weight: 900;
         font-size: 20vh;
         -webkit-text-fill-color: transparent;
@@ -20,10 +20,10 @@ $intro-font-family:'Roboto';
 }
 
 @mixin logo-style {
-    @media #{unquote($phone)} {
+    @media #{unquote($logo-small)} {
         background-image: url("../images/logo.png");
         background-repeat: no-repeat;
-        background-size: 44vh;
+        background-size: Min(50vw, 45vh);
         height: 50vh;
         background-position: center;
         color: transparent;
@@ -32,23 +32,26 @@ $intro-font-family:'Roboto';
 
 @mixin menu-logo-style {
     @media #{unquote($desktop)} {
-        font-weight: bold;
+        font-weight: 700;
+        margin-left: 3vh;
     }
     @media #{unquote($phone)} {
         background-image: url("../images/logo.png");
         background-repeat: no-repeat;
-        background-size: 25vh;
-        height: 25vh;
+        background-size: 20vh;
+        height: 20vh;
         color: transparent;
+        margin-top: 2.5vh;
+        margin-bottom: 2.5vh;
+        margin-left: 3vh;
     }
 }
 
-
 @mixin background-size {
-    @media #{unquote($phone)} {
+    @media #{unquote($logo-small)} {
         background-size: 200%;
     }
-    @media #{unquote($desktop)} {
+    @media #{unquote($logo-full)} {
         background-size: 100%;
     }
 }
@@ -72,11 +75,11 @@ $intro-font-family:'Roboto';
     }
 }
 
-@mixin ul-menu-width-style {
-    @media #{unquote($desktop)} {
-        width: 100%;
-    }
-}
+// @mixin ul-menu-width-style {
+//     @media #{unquote($desktop)} {
+//         width: 100%;
+//     }
+// }
 
 @mixin hidden-menu-left-style {
     @media #{unquote($phone)} {
@@ -98,22 +101,15 @@ $intro-font-family:'Roboto';
         font-size: 10vw;
     }
     @media #{unquote($desktop)} {
-        font-size: 9vh;
-    }
-}
-
-@mixin menu-footer-style {
-    @media #{unquote($phone)} {
-        padding-left: 10vw;
-        height: 10vh;
-    }
-    @media #{unquote($desktop)} {
-        padding-left: 5vw;
+        font-size: Min(2.3vw, 3vw);
     }
 }
 
 @mixin menu-style {
     @media #{unquote($phone)} {
+        justify-content: space-between;
+    }
+    @media #{unquote($desktop)} {
         justify-content: space-between;
     }
 }
@@ -134,7 +130,8 @@ $intro-font-family:'Roboto';
             display: none;
         }
         .menu-hidden-right {
-            height: 75vh;
+            height: 74.8vh;
+            margin-top: 0.2vh;
         }
         .menu-hidden-right ul {
             height: 65vh;

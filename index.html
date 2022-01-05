@@ -1,72 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/zglobal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Suranna&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <title>Strona</title>
 </head>
+
 <body>
-    <div class="main-container"> <!--class czy id? -->
-        
-        <div class="bg-top">
-            <div class="menu-hidden">
-                <div class="menu-hidden-left" style="display: none;">
-                    <img id="menu-hidden-img" src="./images/pattern-6.jpg" width="100%" height="100%" style="display: none;">
-                </div>
-                <div class="menu-hidden-right" style="display: none;">
-                    <div class="menu-hidden-right-main">
-                        <ul>
-                            <li><a>O nas</a></li>
-                            <li><a>Galeria</a></li>
-                            <li><a>Ochrona danych</a></li>
-                            <li><a>Kontakt</a></li>
-                        </ul>
-                        <lord-icon id="menu-hidden-button-2"
-                                    src="https://cdn.lordicon.com/uzrqzyei.json"
-                                    trigger="hover"
-                                    colors="primary:#f2999d,secondary:#08a88a"
-                                    style="width:6vh;height:6vh;">
-                        </lord-icon>
+    <div class="main-container">
+        <!--class czy id? -->
+
+        <div>
+            <div class="bg-top">
+                <div class="menu-hidden">
+                    <div class="menu-hidden-left" style="display: none;">
+                        <img id="menu-hidden-img" src="./images/pattern-6.jpg" width="100%" height="100%"
+                            style="display: none;">
                     </div>
-                    <div class="menu-footer">
-                        <div style="font-weight:bolder;">FUNDACJA POMOGĘ CI</div>
-                        <div>
-                            +48 730 003 300</br>
-                            <span style="color:#FA7F3E;">kdn@gmail.com</span>
+                    <div class="menu-hidden-right" style="display: none;">
+                        <div class="menu-hidden-right-main">
+                            <ul>
+                                <li><a>O NAS</a></li>
+                                <li><a>OSOBY POTRZEBUJĄCE</a></li>
+                                <li><a>WOLONTARIAT</a></li>
+                                <li><a>WSPÓŁPRACA</a></li>
+                                <li><a>GABINET</a></li>
+                                <li><a>GALERIA</a></li>
+                                <li><a>JAK POMÓC NASZYM PODOPIECZNYM?</a></li>
+                            </ul>
+                            <lord-icon id="menu-hidden-button-2" src="https://cdn.lordicon.com/uzrqzyei.json"
+                                trigger="hover" colors="primary:#f2999d,secondary:#08a88a"
+                                style="width:6vh;height:6vh;">
+                            </lord-icon>
                         </div>
                     </div>
                 </div>
+                <div class="menu" style="display:none;">
+                    <div class="menu-logo" height="20vh;">
+                        FUNDACJA POMOGĘ CI
+                    </div>
+                    <div class="menu-left">
+                        <ul>
+                            <li>O NAS</li>
+                            <li>WOLONTARIAT</li>
+                            <li>WSPÓŁPRACA</li>
+                        </ul>
+                        <lord-icon id="menu-hidden-button" src="https://cdn.lordicon.com/uzrqzyei.json" trigger="morph"
+                            colors="primary:#000000,secondary:#08a88a" style="width:6vh;height:6vh;">
+                        </lord-icon>
+                    </div>
+                </div>
+                <div class="logo">Fundacja Pomogę Ci</div>
             </div>
-            <div class="menu" style="display:none;">
-                <div class="menu-logo">FUNDACJA POMOGĘ CI</div>
-                <ul>
-                    <li>O NAS</li>
-                    <li>GALERIA</li>
-                    <li>OCHRONA DANYCH</li>
-                    <li>KONTAKT</li>
-                </ul>
-                    <lord-icon id="menu-hidden-button"
-                        src="https://cdn.lordicon.com/uzrqzyei.json"
-                        trigger="morph"
-                        colors="primary:#000000,secondary:#08a88a"
-                        style="width:6vh;height:6vh;">
-                    </lord-icon>      
+
+            <div class="btn-intro-section">
+                <a id="btn-intro" class="">DALEJ</a>
             </div>
-            <div class="logo">Fundacja Pomogę Ci</div>
         </div>
-        <div class="btn-intro-section">
-            <a id="btn-intro" class="">DALEJ</a>   
+        <div class="hide">
+            <div class="content">
+                <div class="section-intro">
+                    <div class="section-intro-text">
+                        <div>Jestem</div>
+                        <div>po to by</div>
+                        <div>&lt;ci pomóc&gt;</div>
+                    </div>
+
+                    <div>Dowiedz się w jaki sposób!</div>
+                </div>
+                <!-- ukryj tą sekcję na mobilce -->
+                <div class="section-index">
+                    <div>
+                        /1
+                        <a>STATUT</a>
+                    </div>
+
+                    <div>
+                        /2
+                        <a>WYDARZENIA</a>
+                    </div>
+                    <div>
+                        /3
+                        <a>DZIAŁALNOŚĆ</a>
+                    </div>
+                </div>
+                <div class="section-galery">
+                    <!-- <header>GALERIA</header> -->
+                    <div class="galery-content">
+                        <div class="left">
+                            <div class="double"></div>
+                            <div class="bg-salmon single"></div>
+                            <div class="single"></div>
+                            <div class="bg-dark-blue single"></div>
+                            <div class="double"></div>
+                        </div>
+                        <div class="middle">
+                            <div class="single"></div>
+                            <div class="double first img"></div>
+                            <div class="double">
+                                <div class="single bg-salmon small-width" style="float:fleft;"></div>
+                            </div>
+                            <div class="double second img" style="clear: both;">
+                                <div class="single bg-salmon small-width"></div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="double third img">
+                                <div class="single bg-salmon small-width"></div>
+                            </div>
+                            <div class="single">
+                                <div class="bg-dark-blue single small-width" style="float: right;"></div>
+                            </div>
+                            <div class="double fourth img" style="clear: both;"></div>
+                            <div class="single">
+                                <div class="bg-dark-blue single small-width" style="float: right;"></div>
+                            </div>
+                            <div class="single bg-salmon" style="clear: both;"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- wersja na mobilce inna -> zwykły tekst z headerami -->
+                <div class="section-statut">
+                    <div class="first-index">
+                        <!-- <i class="fas fa-balance-scale"></i> -->
+                        <header>01</header>
+                        <div class="content">
+                            <header>Nasz statut </header>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
+                                ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
+                                massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
+                                ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
+                                orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
+                                feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
+                                imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
+                                faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
+                                tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
+                                turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
+                                quam eu arcu fermentum laoreet.</div>
+                        </div>
+                    </div>
+                    <div class="second-index">
+                        <!-- <i class="far fa-calendar-check"></i> -->
+                        <header>02</header>
+                        <div class="content">
+                            <header>Wydarzenia</header>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
+                                ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
+                                massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
+                                ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
+                                orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
+                                feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
+                                imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
+                                faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
+                                tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
+                                turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
+                                quam eu arcu fermentum laoreet.</div>
+                        </div>
+                    </div>
+                    <div class="third-index">
+                        <!-- <i class="fas fa-chart-line"></i> -->
+                        <header>03</header>
+                        <div class="content">
+                            <header>Działalność</header>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
+                                ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
+                                massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
+                                ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
+                                orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
+                                feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
+                                imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
+                                faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
+                                tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
+                                turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
+                                quam eu arcu fermentum laoreet.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="office-img"></div>
+                <div class="section-events">
+                    <header>Nasz Gabinet</header>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
+                        eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum massa, euismod in
+                        volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non ultrices dolor posuere in.
+                        Fusce sollicitudin metus eget odio consequat, tempus faucibus orci pharetra. Etiam porta libero
+                        a lobortis faucibus. Nullam tempus id neque sit amet feugiat. Praesent viverra sapien vitae
+                        massa viverra, et euismod purus elementum. Ut imperdiet viverra tellus sed aliquam. Vestibulum
+                        libero neque, pellentesque quis faucibus in, varius nec nisi. Ut cursus viverra sodales.
+                        Praesent iaculis mattis dui, ut tincidunt velit varius hendrerit. Nam eu turpis eu neque
+                        suscipit vulputate sed ut turpis. Proin ut risus magna. Nulla ac justo nec neque maximus
+                        lobortis. Curabitur ac quam eu arcu fermentum laoreet.
+                    </div>
+                </div>
+                <div class="section-activity activity-1">
+                    <header>Wolontariat</header>
+                    <div class="container">
+                        <div class="">
+                            <form class="px-4 py-3">
+                              <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">ADRES E-MAIL</label>
+                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleDropdownFormPassword1">HASŁO</label>
+                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="HASŁO">
+                              </div>
+                              <!-- <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                <label class="form-check-label" for="dropdownCheck">
+                                  Remember me
+                                </label>
+                              </div> -->
+                              <button type="submit" class="btn btn-danger btn-round" style="border-radius: 40px;">ZAPISZ</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-activity activity-2">
+                    <header>Współpraca</header>
+                    <div class="container">
+                        <div class="">
+                            <form class="px-4 py-3">
+                              <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">ADRES E-MAIL</label>
+                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleDropdownFormPassword1">HASŁO</label>
+                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="HASŁO">
+                              </div>
+                              <!-- <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                <label class="form-check-label" for="dropdownCheck">
+                                  Remember me
+                                </label>
+                              </div> -->
+                              <button type="submit" class="btn btn-danger btn-round" style="border-radius: 40px;">ZAPISZ</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-activity activity-3">
+                    <header>Osoby potrzebujące</header>
+                    <div class="container">
+                        <div class="">
+                            <form class="px-4 py-3">
+                              <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">ADRES E-MAIL</label>
+                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleDropdownFormPassword1">HASŁO</label>
+                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="HASŁO">
+                              </div>
+                              <!-- <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                <label class="form-check-label" for="dropdownCheck">
+                                  Remember me
+                                </label>
+                              </div> -->
+                              <button type="submit" class="btn btn-danger btn-round" style="border-radius: 40px;">ZAPISZ</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-help">
+                    <div>
+                        <header>Jak pomóc naszym podopiecznym?</header>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
+                        eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum massa, euismod in
+                        volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non ultrices dolor posuere in.
+                        Fusce sollicitudin metus eget odio consequat, tempus faucibus orci pharetra. Etiam porta libero
+                        a lobortis faucibus.
+                    </div>
+                    <div>
+                        <header>Przekaż 1% podatku</header>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
+                        eleifend. In ex ante, euismod a luctus at, tincidunt in massa.
+                    </div>
+
+
+                </div>
+                <div class="footer">
+                    <div class="footer-top">
+                        <div class="footer-logo">
+
+                        </div>
+                        <div class="footer-contact">
+                            <div class="left">
+                                <span>Fundacja Pomogę Ci</span><br>
+                                ul. Xyz 10/10<br>
+                                15-795 Białystok<br>
+                            </div>
+                            <div class="middle">
+                                <span>Godziny otwarcia</span><br>
+                                Pon-Sob: 11:00-17:00<br><br>
+                            </div>
+                            <div class="right">
+                                <span>Dane kontaktowe</span><br>
+                                +48 888 444 333<br>
+                                xyz@gmail.com
+                            </div>
+                        </div>
+                        <div class="footer-social-links">
+                            <ul class="footer-social-list">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        2021 © Wszelkie prawa zastrzeżone. | Wykonanie Aleksandra Krysińska
+                    </div>
+                </div>
+            </div>
+
+
         </div>
+
     </div>
     <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
     <script src="https://kit.fontawesome.com/d609103392.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="./scripts/intro.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            "use strict";
+            //  TESTIMONIALS CAROUSEL HOOK
+            $('#customers-testimonials').owlCarousel({
+                loop: true,
+                center: true,
+                items: 3,
+                margin: 0,
+                autoplay: false,
+                dots: true,
+                autoplayTimeout: 5000,
+                smartSpeed: 450,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    1170: {
+                        items: 3
+                    }
+                }
+            });
+        }); 
+    </script>
 </body>
+
 </html>

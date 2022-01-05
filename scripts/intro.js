@@ -7,6 +7,9 @@ function clearContent() {
 
     btn_intro.classList.add("active");
 
+    const hide_class = document.querySelector(".hide");
+    hide_class.setAttribute('style', 'display: flex;');
+
     setTimeout(function(){
         btn_intro_section.remove();
         const logo = document.querySelector('.logo');
@@ -19,6 +22,7 @@ function clearContent() {
             main_container.setAttribute('style', 'animation-play-state: paused;');
             const menu = document.querySelector('.menu');
             menu.setAttribute('style', 'display: flex;');
+            bg_top.setAttribute('style', 'background-image: none; background-color: transparent; border-color: #000000;');
         }, 2000);
     }, 800);
 }
@@ -42,12 +46,18 @@ function showHiddenMenu() {
         menu_hidden_left.classList.remove("hide-menu-hidden-left");
         menu_hidden_left.setAttribute('style', 'display: flex;');
 
+        //bg_top.classList.add("border-line");
+
         setTimeout(function() {
             const menu_hidden_img = document.querySelector("#menu-hidden-img");
             menu_hidden_img.setAttribute('style', 'display: block;');
         }, 1000);
+
+        const hide_class = document.querySelector(".hide");
+        hide_class.setAttribute('style', 'display: none;');
     } else {
         hideHiddenMenu();
+        //bg_top.classList.remove("border-line");
     }
     
 }
@@ -56,6 +66,10 @@ const menu_hidden_button_2 = document.querySelector('#menu-hidden-button-2');
 menu_hidden_button_2.addEventListener('click', hideHiddenMenu);
 
 function hideHiddenMenu() {
+    const hide_class = document.querySelector(".hide");
+    hide_class.setAttribute('style', 'display: flex;');
+
+
     const menu_hidden_img = document.querySelector("#menu-hidden-img");
     menu_hidden_img.setAttribute('style', 'display: none;');
 
