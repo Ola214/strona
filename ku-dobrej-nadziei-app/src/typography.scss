@@ -1,0 +1,150 @@
+$intro-font-family:'Roboto';
+
+@mixin intro-text-style {
+    text-align: center;
+    font-family: $intro-font-family;
+    @media #{unquote($logo-small)} {
+        font-size: 9vw;
+        text-transform: uppercase;
+        background-image: none;
+    }
+    @media #{unquote($logo-full)} {
+        font-weight: 900;
+        font-size: 20vh;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 0.5px #000000;
+        color: rgba(161,103,128,0.5);
+        animation: bg-intro-animation-logo 20s linear;
+    }
+}
+
+@mixin logo-style {
+    @media #{unquote($logo-small)} {
+        background-image: url("../images/logo.png");
+        background-repeat: no-repeat;
+        background-size: Min(50vw, 45vh);
+        height: 50vh;
+        background-position: center;
+        color: transparent;
+    }
+}
+
+@mixin menu-logo-style {
+    @media #{unquote($desktop)} {
+        font-weight: 700;
+        margin-left: 3vh;
+    }
+    @media #{unquote($phone)} {
+        background-image: url("../images/logo.png");
+        background-repeat: no-repeat;
+        background-size: 20vh;
+        height: 20vh;
+        color: transparent;
+        margin-top: 2.5vh;
+        margin-bottom: 2.5vh;
+        margin-left: 3vh;
+    }
+}
+
+@mixin background-size {
+    @media #{unquote($logo-small)} {
+        background-size: 200%;
+    }
+    @media #{unquote($logo-full)} {
+        background-size: 100%;
+    }
+}
+
+@mixin btn-intro-size {
+    @media #{unquote($phone)} {
+        font-size: 6vw;
+        width: 35vw;
+        height: 12vw;
+    }
+    @media #{unquote($desktop)} {
+        font-size: 3.5vh;
+        width: 20vh;
+        height: 10vh;
+    }
+}
+
+@mixin li-menu-style {
+    @media #{unquote($phone)} {
+        display: none;
+    }
+}
+
+// @mixin ul-menu-width-style {
+//     @media #{unquote($desktop)} {
+//         width: 100%;
+//     }
+// }
+
+@mixin hidden-menu-left-style {
+    @media #{unquote($phone)} {
+        display: none !important;
+    }
+}
+
+@mixin hidden-menu-right-style {
+    @media #{unquote($phone)} {
+        width: 100vw;
+    }
+    @media #{unquote($desktop)} {
+        width: 55vw;
+    }
+}
+
+@mixin hidden-menu-right-ul-style {
+    @media #{unquote($phone)} {
+        font-size: 10vw;
+    }
+    @media #{unquote($desktop)} {
+        font-size: Min(2.3vw, 3vw);
+    }
+}
+
+@mixin menu-style {
+    @media #{unquote($phone)} {
+        justify-content: space-between;
+    }
+    @media #{unquote($desktop)} {
+        justify-content: space-between;
+    }
+}
+
+@mixin menu-lord-icon-style {
+    @media #{unquote($phone)} {
+        margin-top: 3vh;
+    }
+    @media #{unquote($desktop)} {
+        margin-top: 3vh;
+    }
+}
+
+@mixin menu-hidden-style {
+    @media #{unquote($phone)} {
+        margin-top: 25vh;
+        #menu-hidden-button-2 {
+            display: none;
+        }
+        .menu-hidden-right {
+            height: 74.8vh;
+            margin-top: 0.2vh;
+        }
+        .menu-hidden-right ul {
+            height: 65vh;
+            justify-content: flex-start;
+            font-size: 2.5vh;
+            padding-left: 0;
+        }
+        .menu-hidden-right ul li {
+            border-bottom: 1px solid #dddddd;
+            width: 100vw;
+        }
+        .menu-hidden-right ul li a {
+            padding-left: 5vw;
+        }
+    }
+}
