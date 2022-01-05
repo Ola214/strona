@@ -592,6 +592,7 @@ body {
       margin-right: 13vw;
       width: 50vw;
       @media #{unquote($phone)}{
+        border-top: 3px solid #000000;
         flex-direction: column;
         font-size: 12px;
         width: 100vw;
