@@ -751,8 +751,10 @@ body .main-container {
 }
 
 #btn-intro.active {
-  -webkit-box-shadow: inset -20vh 0 0 0 #f2999d, inset 20vh 0 0 0 #f2999d;
-          box-shadow: inset -20vh 0 0 0 #f2999d, inset 20vh 0 0 0 #f2999d;
+  -webkit-box-shadow: inset -20vh 0 0 0 #f2999d,
+ inset 20vh 0 0 0 #f2999d;
+          box-shadow: inset -20vh 0 0 0 #f2999d,
+ inset 20vh 0 0 0 #f2999d;
   border: 0.2vh solid #000000;
   color: #ffffff;
   font-weight: bold;

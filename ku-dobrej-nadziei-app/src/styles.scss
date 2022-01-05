@@ -164,7 +164,7 @@ body {
 .logo {
   width: 100vw;
   @include intro-text-style;
-  background-image: url('../images/pattern-3.jpg');
+  background-image: url('images/pattern-3.jpg');
   background-repeat: no-repeat;
   @include background-size;
   background-position: 0 calc(100% - calc(12vh - 75vh));
@@ -175,7 +175,7 @@ body {
 }
 
 .main-container {
-    background-image: url('../images/pattern-3.jpg');
+    background-image: url('images/pattern-3.jpg');
     background-repeat: no-repeat;
     @include background-size;
     background-position: 0 100%;
@@ -396,7 +396,7 @@ body {
 }
 
 .footer-logo {
-  background-image: url("../images/logo-violet-circle.png");
+  background-image: url("images/logo-violet-circle.png");
   background-repeat: no-repeat;
   background-size: Min(30vh,30vw);
   height: Min(30vh,30vw);
@@ -450,27 +450,27 @@ body {
 
 @font-face {
   font-family: Sportinggrotesque;
-  src: url('../fonts/SportingGrotesque-Regular.otf');
+  src: url('fonts/SportingGrotesque-Regular.otf');
 }
 
 @font-face {
   font-family: Whyte-Bold;
-  src: url('../fonts/Whyte-Bold.ttf');
+  src: url('fonts/Whyte-Bold.ttf');
 }
 
 @font-face {
   font-family: Whyte-Heavy;
-  src: url('../fonts/Whyte-Heavy.ttf');
+  src: url('fonts/Whyte-Heavy.ttf');
 }
 
 @font-face {
   font-family: Whyte-Light;
-  src: url('../fonts/Whyte-Light.ttf');
+  src: url('fonts/Whyte-Light.ttf');
 }
 
 @font-face {
   font-family: Whyte-Extra-Light;
-  src: url('../fonts/Whyte-Extra-Light.ttf');
+  src: url('fonts/Whyte-Extra-Light.ttf');
 }
 
 .section-index {
@@ -478,7 +478,7 @@ body {
   height: 50vh;
   font-size: 5.5vw;
   font-weight: bold;
-  background-image: url('/images/so-white.png');
+  background-image: url('images/so-white.png');
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -636,7 +636,7 @@ body {
 }
 
 .section-events {
-  background-image: url('/images/so-white.png');
+  background-image: url('images/so-white.png');
   min-height: 70vh;
   width: 100vw;
   font-size: 25px;
@@ -666,7 +666,7 @@ body {
   
 }
 .office-img {
-  background-image: url('../images/office.jpg');
+  background-image: url('images/office.jpg');
   background-repeat: no-repeat;
   background-size: 60vw;
   height: 40vw;
@@ -710,7 +710,7 @@ body {
 }
 
 .activity-2 {
-  background-image: url('/images/so-white.png');
+  background-image: url('images/so-white.png');
 }
 
 .activity-3 {
@@ -752,16 +752,16 @@ body {
       background-repeat: no-repeat;
     }
     .first {
-      background-image: url('../images/img-3.jpg');
+      background-image: url('images/img-3.jpg');
     }
     .second {
-      background-image: url('../images/img-2.jpg');
+      background-image: url('images/img-2.jpg');
     }
     .third {
-      background-image: url('../images/img-1.jpg');
+      background-image: url('images/img-1.jpg');
     }
     .fourth {
-      background-image: url('../images/img-4.jpg');
+      background-image: url('images/img-4.jpg');
     }
     .bg-salmon {
       background-image: $bg-salmon;
