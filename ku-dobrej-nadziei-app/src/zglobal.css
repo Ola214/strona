@@ -452,7 +452,7 @@ body .main-container {
   width: 100vw;
   text-align: center;
   font-family: "Roboto";
-  background-image: url("../images/pattern-3.jpg");
+  background-image: url("images/pattern-3.jpg");
   background-repeat: no-repeat;
   background-position: 0 calc(100% - calc(12vh - 75vh));
   padding-bottom: 2vh;
@@ -495,7 +495,7 @@ body .main-container {
 
 @media only screen and (max-width: 1254.99px) {
   .logo {
-    background-image: url("../images/logo.png");
+    background-image: url("images/logo.png");
     background-repeat: no-repeat;
     background-size: Min(50vw, 45vh);
     height: 50vh;
@@ -505,7 +505,7 @@ body .main-container {
 }
 
 .main-container {
-  background-image: url("../images/pattern-3.jpg");
+  background-image: url("images/pattern-3.jpg");
   background-repeat: no-repeat;
   background-position: 0 100%;
   -webkit-animation: bg-intro-animation 20s linear;
@@ -595,7 +595,7 @@ body .main-container {
 
 @media only screen and (max-width: 767px) {
   .menu-logo {
-    background-image: url("../images/logo.png");
+    background-image: url("images/logo.png");
     background-repeat: no-repeat;
     background-size: 20vh;
     height: 20vh;
@@ -887,7 +887,7 @@ body .main-container {
 }
 
 .footer-logo {
-  background-image: url("../images/logo-violet-circle.png");
+  background-image: url("images/logo-violet-circle.png");
   background-repeat: no-repeat;
   background-size: Min(30vh, 30vw);
   height: Min(30vh, 30vw);
@@ -948,27 +948,27 @@ body .main-container {
 
 @font-face {
   font-family: Sportinggrotesque;
-  src: url("../fonts/SportingGrotesque-Regular.otf");
+  src: url("fonts/SportingGrotesque-Regular.otf");
 }
 
 @font-face {
   font-family: Whyte-Bold;
-  src: url("../fonts/Whyte-Bold.ttf");
+  src: url("fonts/Whyte-Bold.ttf");
 }
 
 @font-face {
   font-family: Whyte-Heavy;
-  src: url("../fonts/Whyte-Heavy.ttf");
+  src: url("fonts/Whyte-Heavy.ttf");
 }
 
 @font-face {
   font-family: Whyte-Light;
-  src: url("../fonts/Whyte-Light.ttf");
+  src: url("fonts/Whyte-Light.ttf");
 }
 
 @font-face {
   font-family: Whyte-Extra-Light;
-  src: url("../fonts/Whyte-Extra-Light.ttf");
+  src: url("fonts/Whyte-Extra-Light.ttf");
 }
 
 .section-index {
@@ -976,7 +976,7 @@ body .main-container {
   height: 50vh;
   font-size: 5.5vw;
   font-weight: bold;
-  background-image: url("/images/so-white.png");
+  background-image: url("images/so-white.png");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1189,7 +1189,7 @@ body .main-container {
 }
 
 .section-events {
-  background-image: url("/images/so-white.png");
+  background-image: url("images/so-white.png");
   min-height: 70vh;
   width: 100vw;
   font-size: 25px;
@@ -1227,7 +1227,7 @@ body .main-container {
 }
 
 .office-img {
-  background-image: url("../images/office.jpg");
+  background-image: url("images/office.jpg");
   background-repeat: no-repeat;
   background-size: 60vw;
   height: 40vw;
@@ -1283,7 +1283,7 @@ body .main-container {
 }
 
 .activity-2 {
-  background-image: url("/images/so-white.png");
+  background-image: url("images/so-white.png");
 }
 
 .activity-3 {
@@ -1336,19 +1336,19 @@ body .main-container {
 }
 
 .section-galery .galery-content .first {
-  background-image: url("../images/img-3.jpg");
+  background-image: url("images/img-3.jpg");
 }
 
 .section-galery .galery-content .second {
-  background-image: url("../images/img-2.jpg");
+  background-image: url("images/img-2.jpg");
 }
 
 .section-galery .galery-content .third {
-  background-image: url("../images/img-1.jpg");
+  background-image: url("images/img-1.jpg");
 }
 
 .section-galery .galery-content .fourth {
-  background-image: url("../images/img-4.jpg");
+  background-image: url("images/img-4.jpg");
 }
 
 .section-galery .galery-content .bg-salmon {
