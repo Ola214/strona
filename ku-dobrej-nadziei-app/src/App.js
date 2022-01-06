@@ -1,407 +1,425 @@
+﻿import React from 'react';
 import logo from './logo.svg';
 import './zglobal.css';
+import pattern_6 from './images/pattern-6.jpg';
 
-function App() {
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
+export default class App extends React.Component {
+    handleNextClick() {
+        const btn_intro_section = document.querySelector('.btn-intro-section');
+        const btn_intro = document.querySelector('#btn-intro');
+    
+        btn_intro.classList.add("active");
+    
+        const hide_class = document.querySelector(".hide");
+        hide_class.setAttribute('style', 'display: flex;');
+    
+        setTimeout(function(){
+            btn_intro_section.remove();
+            const logo = document.querySelector('.logo');
+            const bg_top = document.querySelector('.bg-top');
+            const main_container = document.querySelector('.main-container');
+        
+            logo.remove();
+            bg_top.classList.add("moving");
+            setTimeout(function(){
+                main_container.setAttribute('style', 'animation-play-state: paused;');
+                const menu = document.querySelector('.menu');
+                menu.setAttribute('style', 'display: flex;');
+                bg_top.setAttribute('style', 'background-image: none; background-color: transparent; border-color: #000000;');
+            }, 2000);
+        }, 800);
+    }
 
-  return (
-    <!DOCTYPE html>
-<html lang="en">
+    hideHiddenMenu() {
+        const hide_class = document.querySelector(".hide");
+        hide_class.setAttribute('style', 'display: flex;');
+    
+    
+        const menu_hidden_img = document.querySelector("#menu-hidden-img");
+        menu_hidden_img.setAttribute('style', 'display: none;');
+    
+        const menu_hidden_left = document.querySelector(".menu-hidden-left");
+        menu_hidden_left.classList.add("hide-menu-hidden-left");
+    
+        const menu_hidden_right = document.querySelector(".menu-hidden-right");
+        menu_hidden_right.classList.add("hide-menu-hidden-right");
+        
+        setTimeout(function() {
+            menu_hidden_left.classList.remove("show-menu-hidden-left");
+            menu_hidden_right.classList.remove("show-menu-hidden-right");
+            menu_hidden_left.setAttribute('style', 'display: none;');
+            menu_hidden_right.setAttribute('style', 'display: none;');
+        }, 1000);
+    } 
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/zglobal.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Suranna&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <title>Strona</title>
-</head>
+    showHiddenMenu() {
 
-<body>
-    <div class="main-container">
-        <!--class czy id? -->
-
-        <div>
-            <div class="bg-top">
-                <div class="menu-hidden">
-                    <div class="menu-hidden-left" style="display: none;">
-                        <img id="menu-hidden-img" src="./images/pattern-6.jpg" width="100%" height="100%"
-                            style="display: none;">
-                    </div>
-                    <div class="menu-hidden-right" style="display: none;">
-                        <div class="menu-hidden-right-main">
-                            <ul>
-                                <li><a>O NAS</a></li>
-                                <li><a>OSOBY POTRZEBUJĄCE</a></li>
-                                <li><a>WOLONTARIAT</a></li>
-                                <li><a>WSPÓŁPRACA</a></li>
-                                <li><a>GABINET</a></li>
-                                <li><a>GALERIA</a></li>
-                                <li><a>JAK POMÓC NASZYM PODOPIECZNYM?</a></li>
-                            </ul>
-                            <lord-icon id="menu-hidden-button-2" src="https://cdn.lordicon.com/uzrqzyei.json"
-                                trigger="hover" colors="primary:#f2999d,secondary:#08a88a"
-                                style="width:6vh;height:6vh;">
-                            </lord-icon>
+        const bg_top = document.querySelector('.bg-top');
+    
+        const menu_hidden_right = document.querySelector(".menu-hidden-right");
+    
+        if(document.querySelector(".show-menu-hidden-right") == null) {
+            menu_hidden_right.classList.add("show-menu-hidden-right");
+            menu_hidden_right.classList.remove("hide-menu-hidden-right");
+            menu_hidden_right.setAttribute('style', 'display: flex;');
+    
+            const menu_hidden_left = document.querySelector(".menu-hidden-left");
+            menu_hidden_left.classList.add("show-menu-hidden-left");
+            menu_hidden_left.classList.remove("hide-menu-hidden-left");
+            menu_hidden_left.setAttribute('style', 'display: flex;');
+    
+            //bg_top.classList.add("border-line");
+    
+            setTimeout(function() {
+                const menu_hidden_img = document.querySelector("#menu-hidden-img");
+                menu_hidden_img.setAttribute('style', 'display: block;');
+            }, 1000);
+    
+            const hide_class = document.querySelector(".hide");
+            hide_class.setAttribute('style', 'display: none;');
+        } else {
+            const hide_class = document.querySelector(".hide");
+            hide_class.setAttribute('style', 'display: flex;');
+        
+        
+            const menu_hidden_img = document.querySelector("#menu-hidden-img");
+            menu_hidden_img.setAttribute('style', 'display: none;');
+        
+            const menu_hidden_left = document.querySelector(".menu-hidden-left");
+            menu_hidden_left.classList.add("hide-menu-hidden-left");
+        
+            const menu_hidden_right = document.querySelector(".menu-hidden-right");
+            menu_hidden_right.classList.add("hide-menu-hidden-right");
+            
+            setTimeout(function() {
+                menu_hidden_left.classList.remove("show-menu-hidden-left");
+                menu_hidden_right.classList.remove("show-menu-hidden-right");
+                menu_hidden_left.setAttribute('style', 'display: none;');
+                menu_hidden_right.setAttribute('style', 'display: none;');
+            }, 1000);
+        }
+        
+    }
+   
+    
+     render (){
+        //   return (
+        //     <div classNameName="App">
+        //       <header classNameName="App-header">
+        //         <img src={logo} className="App-logo" alt="logo" />
+        //         <p>
+        //           Edit <code>src/App.js</code> and save to reload.
+        //         </p>
+        //         <a
+        //           className="App-link"
+        //           href="https://reactjs.org"
+        //           target="_blank"
+        //           rel="noopener noreferrer"
+        //         >
+        //           Learn React
+        //         </a>
+        //       </header>
+        //     </div>
+        //   );
+         
+    
+        return (
+            <div className="main-container">
+    
+                <div>
+                    <div className="bg-top">
+                        <div className="menu-hidden">
+                            <div className="menu-hidden-left" >
+                                <img id="menu-hidden-img" src={pattern_6} width="100%" height="100%"
+                                      />
+                            </div>
+                            <div className="menu-hidden-right"  >
+                                <div className="menu-hidden-right-main">
+                                    <ul>
+                                        <li><a>O NAS</a></li>
+                                        <li><a>OSOBY POTRZEBUJĄCE</a></li>
+                                        <li><a>WOLONTARIAT</a></li>
+                                        <li><a>WSPÓŁPRACA</a></li>
+                                        <li><a>GABINET</a></li>
+                                        <li><a>GALERIA</a></li>
+                                        <li><a>JAK POMÓC NASZYM PODOPIECZNYM?</a></li>
+                                    </ul>
+                                    <lord-icon id="menu-hidden-button-2" src="https://cdn.lordicon.com/uzrqzyei.json"
+                                        trigger="hover" colors="primary:#f2999d,secondary:#08a88a" onClick={this.hideHiddenMenu}>
+                                        
+                                    </lord-icon>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="menu" style="display:none;">
-                    <div class="menu-logo" height="20vh;">
-                        FUNDACJA POMOGĘ CI
-                    </div>
-                    <div class="menu-left">
-                        <ul>
-                            <li>O NAS</li>
-                            <li>WOLONTARIAT</li>
-                            <li>WSPÓŁPRACA</li>
-                        </ul>
-                        <lord-icon id="menu-hidden-button" src="https://cdn.lordicon.com/uzrqzyei.json" trigger="morph"
-                            colors="primary:#000000,secondary:#08a88a" style="width:6vh;height:6vh;">
-                        </lord-icon>
-                    </div>
-                </div>
-                <div class="logo">Fundacja Pomogę Ci</div>
+                        <div className="menu">
+                            <div className="menu-logo" height="20vh;">
+                                FUNDACJA POMOGĘ CI
+                            </div>
+                            <div className="menu-left">
+                                <ul>
+                                    <li>O NAS</li>
+                                    <li>WOLONTARIAT</li>
+                                    <li>WSPÓŁPRACA</li>
+                                </ul>
+                                <lord-icon id="menu-hidden-button" src="https://cdn.lordicon.com/uzrqzyei.json" trigger="morph"
+                                    colors="primary:#000000,secondary:#08a88a" onClick={this.showHiddenMenu}>
+                                </lord-icon>
+                            </div>
+                        </div>
+                        <div className="logo">Fundacja Pomogę Ci</div>
+                    </div >
+    
+            <div className="btn-intro-section">
+                <a id="btn-intro" className="" onClick={this.handleNextClick}>DALEJ</a>
             </div>
-
-            <div class="btn-intro-section">
-                <a id="btn-intro" class="">DALEJ</a>
-            </div>
-        </div>
-        <div class="hide">
-            <div class="content">
-                <div class="section-intro">
-                    <div class="section-intro-text">
-                        <div>Jestem</div>
-                        <div>po to by</div>
-                        <div>&lt;ci pomóc&gt;</div>
-                    </div>
-
-                    <div>Dowiedz się w jaki sposób!</div>
-                </div>
-                <!-- ukryj tą sekcję na mobilce -->
-                <div class="section-index">
-                    <div>
-                        /1
-                        <a>STATUT</a>
-                    </div>
-
-                    <div>
-                        /2
-                        <a>WYDARZENIA</a>
-                    </div>
-                    <div>
-                        /3
-                        <a>DZIAŁALNOŚĆ</a>
-                    </div>
-                </div>
-                <div class="section-galery">
-                    <!-- <header>GALERIA</header> -->
-                    <div class="galery-content">
-                        <div class="left">
-                            <div class="double"></div>
-                            <div class="bg-salmon single"></div>
-                            <div class="single"></div>
-                            <div class="bg-dark-blue single"></div>
-                            <div class="double"></div>
+                </div >
+            <div className="hide">
+                <div className="content">
+                    <div className="section-intro">
+                        <div className="section-intro-text">
+                            <div>Jestem</div>
+                            <div>po to by</div>
+                            <div>&lt;ci pomóc&gt;</div>
                         </div>
-                        <div class="middle">
-                            <div class="single"></div>
-                            <div class="double first img"></div>
-                            <div class="double">
-                                <div class="single bg-salmon small-width" style="float:fleft;"></div>
+    
+                        <div>Dowiedz się w jaki sposób!</div>
+                    </div>
+                    <div className="section-index">
+                        <div>
+                            /1
+                            <a>STATUT</a>
+                        </div>
+    
+                        <div>
+                            /2
+                            <a>WYDARZENIA</a>
+                        </div>
+                        <div>
+                            /3
+                            <a>DZIAŁALNOŚĆ</a>
+                        </div>
+                    </div>
+                    <div className="section-galery">
+                        <div className="galery-content">
+                            <div className="left">
+                                <div className="double"></div>
+                                <div className="bg-salmon single"></div>
+                                <div className="single"></div>
+                                <div className="bg-dark-blue single"></div>
+                                <div className="double"></div>
                             </div>
-                            <div class="double second img" style="clear: both;">
-                                <div class="single bg-salmon small-width"></div>
+                            <div className="middle">
+                                <div className="single"></div>
+                                <div className="double first img"></div>
+                                <div className="double">
+                                    <div className="single bg-salmon small-width" id="fl1"></div>
+                                </div>
+                                <div className="double second img cb">
+                                    <div className="single bg-salmon small-width"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="right">
-                            <div class="double third img">
-                                <div class="single bg-salmon small-width"></div>
-                            </div>
-                            <div class="single">
-                                <div class="bg-dark-blue single small-width" style="float: right;"></div>
-                            </div>
-                            <div class="double fourth img" style="clear: both;"></div>
-                            <div class="single">
-                                <div class="bg-dark-blue single small-width" style="float: right;"></div>
-                            </div>
-                            <div class="single bg-salmon" style="clear: both;"></div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- wersja na mobilce inna -> zwykły tekst z headerami -->
-                <div class="section-statut">
-                    <div class="first-index">
-                        <!-- <i class="fas fa-balance-scale"></i> -->
-                        <header>01</header>
-                        <div class="content">
-                            <header>Nasz statut </header>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
-                                ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
-                                massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
-                                ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
-                                orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
-                                feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
-                                imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
-                                faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
-                                tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
-                                turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
-                                quam eu arcu fermentum laoreet.</div>
-                        </div>
-                    </div>
-                    <div class="second-index">
-                        <!-- <i class="far fa-calendar-check"></i> -->
-                        <header>02</header>
-                        <div class="content">
-                            <header>Wydarzenia</header>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
-                                ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
-                                massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
-                                ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
-                                orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
-                                feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
-                                imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
-                                faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
-                                tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
-                                turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
-                                quam eu arcu fermentum laoreet.</div>
-                        </div>
-                    </div>
-                    <div class="third-index">
-                        <!-- <i class="fas fa-chart-line"></i> -->
-                        <header>03</header>
-                        <div class="content">
-                            <header>Działalność</header>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
-                                ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
-                                massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
-                                ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
-                                orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
-                                feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
-                                imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
-                                faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
-                                tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
-                                turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
-                                quam eu arcu fermentum laoreet.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="office-img"></div>
-                <div class="section-events">
-                    <header>Nasz Gabinet</header>
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
-                        eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum massa, euismod in
-                        volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non ultrices dolor posuere in.
-                        Fusce sollicitudin metus eget odio consequat, tempus faucibus orci pharetra. Etiam porta libero
-                        a lobortis faucibus. Nullam tempus id neque sit amet feugiat. Praesent viverra sapien vitae
-                        massa viverra, et euismod purus elementum. Ut imperdiet viverra tellus sed aliquam. Vestibulum
-                        libero neque, pellentesque quis faucibus in, varius nec nisi. Ut cursus viverra sodales.
-                        Praesent iaculis mattis dui, ut tincidunt velit varius hendrerit. Nam eu turpis eu neque
-                        suscipit vulputate sed ut turpis. Proin ut risus magna. Nulla ac justo nec neque maximus
-                        lobortis. Curabitur ac quam eu arcu fermentum laoreet.
-                    </div>
-                </div>
-                <div class="section-activity activity-1">
-                    <header>Wolontariat</header>
-                    <div class="container">
-                        <div class="">
-                            <form class="px-4 py-3">
-                              <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">ADRES E-MAIL</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM">
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">HASŁO</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="HASŁO">
-                              </div>
-                              <!-- <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                  Remember me
-                                </label>
-                              </div> -->
-                              <button type="submit" class="btn btn-danger btn-round" style="border-radius: 40px;">ZAPISZ</button>
-                            </form>
-                            <div class="dropdown-divider"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-activity activity-2">
-                    <header>Współpraca</header>
-                    <div class="container">
-                        <div class="">
-                            <form class="px-4 py-3">
-                              <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">ADRES E-MAIL</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM">
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">HASŁO</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="HASŁO">
-                              </div>
-                              <!-- <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                  Remember me
-                                </label>
-                              </div> -->
-                              <button type="submit" class="btn btn-danger btn-round" style="border-radius: 40px;">ZAPISZ</button>
-                            </form>
-                            <div class="dropdown-divider"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-activity activity-3">
-                    <header>Osoby potrzebujące</header>
-                    <div class="container">
-                        <div class="">
-                            <form class="px-4 py-3">
-                              <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">ADRES E-MAIL</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM">
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">HASŁO</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="HASŁO">
-                              </div>
-                              <!-- <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                  Remember me
-                                </label>
-                              </div> -->
-                              <button type="submit" class="btn btn-danger btn-round" style="border-radius: 40px;">ZAPISZ</button>
-                            </form>
-                            <div class="dropdown-divider"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-help">
-                    <div>
-                        <header>Jak pomóc naszym podopiecznym?</header>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
-                        eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum massa, euismod in
-                        volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non ultrices dolor posuere in.
-                        Fusce sollicitudin metus eget odio consequat, tempus faucibus orci pharetra. Etiam porta libero
-                        a lobortis faucibus.
-                    </div>
-                    <div>
-                        <header>Przekaż 1% podatku</header>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
-                        eleifend. In ex ante, euismod a luctus at, tincidunt in massa.
-                    </div>
-
-
-                </div>
-                <div class="footer">
-                    <div class="footer-top">
-                        <div class="footer-logo">
-
-                        </div>
-                        <div class="footer-contact">
-                            <div class="left">
-                                <span>Fundacja Pomogę Ci</span><br>
-                                ul. Xyz 10/10<br>
-                                15-795 Białystok<br>
-                            </div>
-                            <div class="middle">
-                                <span>Godziny otwarcia</span><br>
-                                Pon-Sob: 11:00-17:00<br><br>
-                            </div>
-                            <div class="right">
-                                <span>Dane kontaktowe</span><br>
-                                +48 888 444 333<br>
-                                xyz@gmail.com
+                            <div className="right">
+                                <div className="double third img">
+                                    <div className="single bg-salmon small-width"></div>
+                                </div>
+                                <div className="single">
+                                    <div className="bg-dark-blue single small-width fr"></div>
+                                </div>
+                                <div className="double fourth img cb"></div>
+                                <div className="single">
+                                    <div className="bg-dark-blue single small-width fr"></div>
+                                </div>
+                                <div className="single bg-salmon cb"></div>
+    
                             </div>
                         </div>
-                        <div class="footer-social-links">
-                            <ul class="footer-social-list">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
+                    </div>
+    
+                    <div className="section-statut">
+                        <div className="first-index">
+                            <header>01</header>
+                            <div className="content">
+                                <header>Nasz statut </header>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
+                                    ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
+                                    massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
+                                    ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
+                                    orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
+                                    feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
+                                    imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
+                                    faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
+                                    tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
+                                    turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
+                                    quam eu arcu fermentum laoreet.</div>
+                            </div>
+                        </div>
+                        <div className="second-index">
+                            <header>02</header>
+                            <div className="content">
+                                <header>Wydarzenia</header>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
+                                    ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
+                                    massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
+                                    ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
+                                    orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
+                                    feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
+                                    imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
+                                    faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
+                                    tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
+                                    turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
+                                    quam eu arcu fermentum laoreet.</div>
+                            </div>
+                        </div>
+                        <div className="third-index">
+                            <header>03</header>
+                            <div className="content">
+                                <header>Działalność</header>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl
+                                    ultricies eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum
+                                    massa, euismod in volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non
+                                    ultrices dolor posuere in. Fusce sollicitudin metus eget odio consequat, tempus faucibus
+                                    orci pharetra. Etiam porta libero a lobortis faucibus. Nullam tempus id neque sit amet
+                                    feugiat. Praesent viverra sapien vitae massa viverra, et euismod purus elementum. Ut
+                                    imperdiet viverra tellus sed aliquam. Vestibulum libero neque, pellentesque quis
+                                    faucibus in, varius nec nisi. Ut cursus viverra sodales. Praesent iaculis mattis dui, ut
+                                    tincidunt velit varius hendrerit. Nam eu turpis eu neque suscipit vulputate sed ut
+                                    turpis. Proin ut risus magna. Nulla ac justo nec neque maximus lobortis. Curabitur ac
+                                    quam eu arcu fermentum laoreet.</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer-bottom">
-                        2021 © Wszelkie prawa zastrzeżone. | Wykonanie Aleksandra Krysińska
+                    <div className="office-img"></div>
+                    <div className="section-events">
+                        <header>Nasz Gabinet</header>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
+                            eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum massa, euismod in
+                            volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non ultrices dolor posuere in.
+                            Fusce sollicitudin metus eget odio consequat, tempus faucibus orci pharetra. Etiam porta libero
+                            a lobortis faucibus. Nullam tempus id neque sit amet feugiat. Praesent viverra sapien vitae
+                            massa viverra, et euismod purus elementum. Ut imperdiet viverra tellus sed aliquam. Vestibulum
+                            libero neque, pellentesque quis faucibus in, varius nec nisi. Ut cursus viverra sodales.
+                            Praesent iaculis mattis dui, ut tincidunt velit varius hendrerit. Nam eu turpis eu neque
+                            suscipit vulputate sed ut turpis. Proin ut risus magna. Nulla ac justo nec neque maximus
+                            lobortis. Curabitur ac quam eu arcu fermentum laoreet.
+                        </div>
+                    </div>
+                    <div className="section-activity activity-1">
+                        <header>Wolontariat</header>
+                        <div className="container">
+                            <div className="">
+                                <form className="px-4 py-3">
+                                    <div className="form-group">
+                                        <label htmlFor="exampleDropdownFormEmail1">ADRES E-MAIL</label>
+                                        <input type="email" className="form-control exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM" />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleDropdownFormPassword1">HASŁO</label>
+                                        <input type="password" className="form-control exampleDropdownFormPassword1" placeholder="HASŁO" />
+                                    </div>
+                                    <button type="submit" className="btn btn-danger btn-round rounded-div">ZAPISZ</button>
+                                </form>
+                                <div className="dropdown-divider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="section-activity activity-2">
+                        <header>Współpraca</header>
+                        <div className="container">
+                            <div className="">
+                                <form className="px-4 py-3">
+                                    <div className="form-group">
+                                        <label htmlFor="exampleDropdownFormEmail1">ADRES E-MAIL</label>
+                                        <input type="email" className="form-control exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM" />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleDropdownFormPassword1">HASŁO</label>
+                                        <input type="password" className="form-control exampleDropdownFormPassword1" placeholder="HASŁO" />
+                                    </div>
+                                    <button type="submit" className="btn btn-danger btn-round rounded-div">ZAPISZ</button>
+                                </form>
+                                <div className="dropdown-divider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="section-activity activity-3">
+                        <header>Osoby potrzebujące</header>
+                        <div className="container">
+                            <div className="">
+                                <form className="px-4 py-3">
+                                    <div className="form-group">
+                                        <label htmlFor="exampleDropdownFormEmail1">ADRES E-MAIL</label>
+                                        <input type="email" className="form-control exampleDropdownFormEmail1" placeholder="EMAIL@EXAMPLE.COM" />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleDropdownFormPassword1">HASŁO</label>
+                                        <input type="password" className="form-control exampleDropdownFormPassword1" placeholder="HASŁO" />
+                                    </div>
+    
+                                    <button type="submit" className="btn btn-danger btn-round rounded-div">ZAPISZ</button>
+                                </form>
+                                <div className="dropdown-divider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="section-help">
+                        <div>
+                            <header>Jak pomóc naszym podopiecznym?</header>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
+                            eleifend. In ex ante, euismod a luctus at, tincidunt in massa. Mauris ipsum massa, euismod in
+                            volutpat non, ornare vel velit. Nam vestibulum fringilla quam, non ultrices dolor posuere in.
+                            Fusce sollicitudin metus eget odio consequat, tempus faucibus orci pharetra. Etiam porta libero
+                            a lobortis faucibus.
+                        </div>
+                        <div>
+                            <header>Przekaż 1% podatku</header>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel neque et nisl ultricies
+                            eleifend. In ex ante, euismod a luctus at, tincidunt in massa.
+                        </div>
+    
+    
+                    </div>
+                    <div className="footer">
+                        <div className="footer-top">
+                            <div className="footer-logo">
+    
+                            </div>
+                            <div className="footer-contact">
+                                <div className="left">
+                                    <span>Fundacja Pomogę Ci</span><br />
+                                    ul. Xyz 10/10<br />
+                                    15-795 Białystok<br />
+                                </div>
+                                <div className="middle">
+                                    <span>Godziny otwarcia</span><br />
+                                    Pon-Sob: 11:00-17:00<br /><br />
+                                </div>
+                                <div className="right">
+                                    <span>Dane kontaktowe</span><br />
+                                    +48 888 444 333<br />
+                                    xyz@gmail.com
+                                </div>
+                            </div>
+                            <div className="footer-social-links">
+                                <ul className="footer-social-list">
+                                    <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i className="fab fa-youtube"></i></a></li>
+                                    <li><a href="#"><i className="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="footer-bottom">
+                            2021 © Wszelkie prawa zastrzeżone. | Wykonanie Aleksandra Krysińska
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-        </div>
-
-    </div>
-    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
-    <script src="https://kit.fontawesome.com/d609103392.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="./scripts/intro.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            "use strict";
-            //  TESTIMONIALS CAROUSEL HOOK
-            $('#customers-testimonials').owlCarousel({
-                loop: true,
-                center: true,
-                items: 3,
-                margin: 0,
-                autoplay: false,
-                dots: true,
-                autoplayTimeout: 5000,
-                smartSpeed: 450,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2
-                    },
-                    1170: {
-                        items: 3
-                    }
-                }
-            });
-        }); 
-    </script>
-</body>
-
-</html>
-  );
-
+        </div >
+        );
+    
+    }
 }
 
-export default App;
+
+
+// export default App;
+
