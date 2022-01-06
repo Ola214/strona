@@ -8,6 +8,34 @@ $hulu: 'Nunito Sans', sans-serif;
 $heading: 'Montserrat', sans-serif;
 $body: 'Roboto', sans-serif;
 
+// for removing style="" from html
+
+.menu-hidden-left, #menu-hidden-img, .menu-hidden-right, .menu {
+  display: none;
+}
+#menu-hidden-button, #menu-hidden-button-2 {
+  width: 6vh;
+  height: 6vh;
+}
+
+#fl1{
+  float: left;
+}
+
+.fr{
+  float:right;
+}
+
+.cb {
+  clear: both;
+}
+
+.rounded-div {
+  border-radius: 40px;
+}
+
+
+//
 
 body {
   height: 100vh;
@@ -852,3 +880,5 @@ body {
   margin-top: -30px;
   text-align: left;
 }
+
+
