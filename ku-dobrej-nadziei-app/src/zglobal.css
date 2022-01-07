@@ -218,6 +218,26 @@ table {
   border-radius: 40px;
 }
 
+.fab {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#facebook-img {
+  width: 15px;
+  margin-top: 10px;
+}
+
+#youtube-img {
+  width: 30px;
+  margin-top: 7px;
+}
+
+#instagram-img {
+  width: 25px;
+  margin-top: 5px;
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -914,7 +934,7 @@ body .main-container {
 .footer-logo {
   background-image: url("images/logo-violet-circle.png");
   background-repeat: no-repeat;
-  background-size: Min(30vh, 30vw);
+  background-size: Min(20vh, 20vw);
   height: Min(30vh, 30vw);
   width: Min(30vh, 30vw);
   background-position: center;
@@ -1213,7 +1233,7 @@ body .main-container {
   }
 }
 
-.section-events {
+#section-events {
   background-image: url("images/so-white.png");
   min-height: 70vh;
   width: 100vw;
@@ -1225,18 +1245,18 @@ body .main-container {
 }
 
 @media only screen and (max-width: 767px) {
-  .section-events {
+  #section-events {
     font-size: 12px;
   }
 }
 
-.section-events div {
+#section-events div {
   margin-right: 10vw;
   margin-left: 10vw;
   padding-bottom: 10vw;
 }
 
-.section-events header {
+#section-events header {
   font-size: 90px;
   font-weight: 400;
   line-height: 180px;
@@ -1246,7 +1266,7 @@ body .main-container {
 }
 
 @media only screen and (max-width: 767px) {
-  .section-events header {
+  #section-events header {
     font-size: 20px;
   }
 }

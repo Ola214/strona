@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './zglobal.css';
+import './zglobal.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './bootstrap/css/bootstrap.min.css';
+import './fonts/Whyte-Bold.ttf';
+import './fonts/Whyte-Extra-Light.ttf';
+import './fonts/Whyte-Heavy.ttf';
+import './fonts/Whyte-Light.ttf';
+import './fonts/SportingGrotesque-Bold.otf';
+import './fonts/SportingGrotesque-Regular.otf';
+
 
 ReactDOM.render(
   <React.StrictMode>
